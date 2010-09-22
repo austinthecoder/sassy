@@ -18,6 +18,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.extra_rdoc_files = ["README"]
 
-  # s.add_dependency
-  # s.add_development_dependency
+  s.add_dependency 'activesupport', '>= 3.0.0'
+  s.add_development_dependency 'rspec', '>= 2.0.0.beta.22'
 end
