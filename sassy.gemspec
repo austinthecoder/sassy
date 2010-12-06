@@ -9,10 +9,11 @@ Gem::Specification.new do |s|
   s.post_install_message "Thanks for installing Sassy!"
   s.files = Dir[
     '.gitignore',
-    'lib/sassy.rb',
+    'lib/**/*',
     'LICENSE',
     'README',
-    'sassy.gemspec'
+    'sassy.gemspec',
+    'spec/**/*'
   ].to_a
   s.test_files = []
   s.require_paths = ["lib"]
