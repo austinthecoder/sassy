@@ -1,9 +1,10 @@
-require 'rubygems'
-require 'active_support/core_ext/object'
+require Sassy.root.join('scss', 'is_scss')
 
 module Sassy
   module SCSS
     class Declaration
+
+      include IsSCSS
 
       def initialize(property, value)
         raise ArgumentError if [property, value].any?(&:blank?)

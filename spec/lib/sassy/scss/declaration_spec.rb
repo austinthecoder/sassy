@@ -15,7 +15,7 @@ describe Sassy::SCSS::Declaration do
       context "when the args are #{args.inspect}" do
         before { @args = args }
 
-        it "raise an error" do
+        it "raises an error" do
           lambda { Sassy::SCSS::Declaration.new(*@args) }.should raise_error(ArgumentError)
         end
       end
@@ -34,11 +34,15 @@ describe Sassy::SCSS::Declaration do
     end
   end
 
-  describe "#to_scss" do
-    context "when the property is 'color' and the value is 'red'" do
-      before { @d = Sassy::SCSS::Declaration.new('color', 'red') }
+  describe "instance methods" do
+    before do
+      @d = Sassy::SCSS::Declaration.new('color', 'red')
+    end
 
-      it("returns 'color: red;'") { @d.to_scss.should == 'color: red;' }
+    describe "#to_scss" do
+      context "when the property is 'color' and the value is 'red'" do
+        it("returns 'color: red;'") { @d.to_scss.should == 'color: red;' }
+      end
     end
   end
 

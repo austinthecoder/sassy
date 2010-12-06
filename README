@@ -1,13 +1,27 @@
-FakeT2g
+Sassy
 ========
 
-Introduction goes here.
-
+Generate SCSS using ruby.
 
 Example
-=======
+-------
 
-Example goes here.
+Sassy::SCSS.build do
+  body do
+    background '#000'
+    color '#fff'
+  end
 
+  r '#header' do
+    background 'green'
+    d 'font-size', '13px'
 
-Copyright (c) 2010 Austin Schneider
+    a do
+      color :red;
+    end
+
+    r '#logo' do
+      background :blue
+    end
+  end
+end
