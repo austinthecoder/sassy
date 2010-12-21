@@ -1,24 +1,25 @@
-Gem::Specification.new do |s|
-  s.name = 'sassy'
-  s.version = '0.0.1'
-  s.authors = ["Austin Schneider"]
-  s.email = "soccer022483@gmail.com"
-  s.description = 'Sassy'
-  s.homepage = ""
-  s.summary = 'Sassy; copyright 2010 Austin Schneider'
-  s.post_install_message "Thanks for installing Sassy!"
-  s.files = Dir[
-    '.gitignore',
-    'lib/**/*',
-    'LICENSE',
-    'README',
-    'sassy.gemspec',
-    'spec/**/*'
-  ].to_a
-  s.test_files = []
-  s.require_paths = ["lib"]
-  s.extra_rdoc_files = ["README"]
+$:.push File.expand_path("../lib", __FILE__)
+require "sassy/version"
 
-  s.add_dependency 'activesupport', '>= 3.0.0'
-  s.add_development_dependency 'rspec', '>= 2.0.0.beta.22'
+Gem::Specification.new do |s|
+  s.name = "sassy"
+  s.version = Sassy::VERSION
+  s.platform = Gem::Platform::RUBY
+  s.authors = ["Austin Schneider"]
+  s.email = ["soccer022483@gmail.com"]
+  s.homepage = "http://github.com/soccer022483/sassy"
+  s.summary = %q{Generate SCSS with Ruby.}
+  s.description = %q{Generate SCSS with Ruby.}
+
+  s.rubyforge_project = "sassy"
+
+  s.files = `git ls-files`.split("\n")
+  s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.require_paths = ["lib"]
+
+  s.post_install_message = "Thanks for installing Sassy!"
+
+  s.add_dependency 'activesupport', '~> 3.0'
+  s.add_development_dependency 'rspec', '~> 2.0'
 end

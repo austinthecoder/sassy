@@ -1,4 +1,6 @@
 .AppleDouble
+.bundle
 .rvmrc
 .rspec
-sassy*.gem
+*.gem
+pkg/*
