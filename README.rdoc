@@ -15,7 +15,7 @@ Generate SCSS using ruby.
       d 'font-size', '13px'
 
       a do
-        color :red;
+        color :red
       end
 
       r '#logo' do
