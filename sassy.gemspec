@@ -19,7 +19,12 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.post_install_message = "Thanks for installing Sassy!"
-
-  s.add_dependency 'activesupport', '~> 3.0'
+  
+  [
+    ['i18n', '~> 0.5'],
+    ['activesupport', '~> 3.0']
+  ].each do |g, v|
+    s.add_dependency g, v
+  end
   s.add_development_dependency 'rspec', '~> 2.0'
 end
